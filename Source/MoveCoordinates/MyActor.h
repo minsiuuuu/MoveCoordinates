@@ -14,6 +14,9 @@ class MOVECOORDINATES_API AMyActor : public AActor
 private:
 	TArray<FVector2D> coordinatesArr = { FVector2D(0, 0) };
 	FVector2D start = FVector2D(0, 0);
+
+	int32 evCnt;
+	float totDist;
 	
 public:	
 	// Sets default values for this actor's properties
@@ -28,5 +31,7 @@ public:
 	virtual void Tick(float DeltaTime) override;
 	void move();
 	int32 step();
+	float distance(FVector2D first, FVector2D second);
+	void createEvent();
 
 };
