@@ -11,6 +11,9 @@ class MOVECOORDINATES_API AMyActor : public AActor
 {
 	GENERATED_BODY()
 	
+private:
+	TArray<FVector2D> coordinatesArr = { FVector2D(0, 0) };
+	FVector2D start = FVector2D(0, 0);
 	
 public:	
 	// Sets default values for this actor's properties
@@ -23,5 +26,7 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+	void move();
+	int32 step();
 
 };
